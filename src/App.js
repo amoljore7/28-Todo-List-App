@@ -6,16 +6,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import uuid from 'uuid';
 
 class App extends Component {
-
-  componentDidMount() {
-    console.log(">>>Inside of Component Did Mount>>");
-
+  state = {
+    items: [],
+    id: 0,
+    item: '',
+    editItem: false
   }
-  componentWillMount(){
-    console.log(">>>>will mount")
+
+  handleChange = (e) => {
+    this.setState({
+      item: e.target.value,
+    })
   }
-  componentWillUnmount() {
-    console.log(">>>inside of component Will Mount>>>");
+  handleSubmit = (e) =>{
+
   }
   render() {
     return (
@@ -23,7 +27,11 @@ class App extends Component {
         <div className="row">
           <div className="col=10 mx-auto col-md-8 mt-4">
             <h3 className="text-capitalize text-center">todo input</h3>
-            <TodoInput />
+            <TodoInput
+              item={this.state.item}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+            />
             <TodoList />
           </div>
         </div>
