@@ -3,12 +3,12 @@ import TodoInput from './components/TodoInput';
 import TodoList from './components/TodoList';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import uuid from 'uuid';
+import uuid from 'uuid/v4'
 
 class App extends Component {
   state = {
     items: [],
-    id: 0,
+    id: uuid(),
     item: '',
     editItem: false
   }
@@ -19,6 +19,20 @@ class App extends Component {
     })
   }
   handleSubmit = (e) =>{
+    e.preventDefault();
+
+    const newItem={
+      id: this.state.id,
+      title: this.state.item
+    }
+    const updatedItem = [...this.state.items, newItem]
+
+    this.setState({
+      items: updatedItem,
+      item:'',
+      id:uuid(),
+      editItem: false
+    });
 
   }
   render() {
@@ -32,7 +46,7 @@ class App extends Component {
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
             />
-            <TodoList />
+            <TodoList items={this.state.items} />
           </div>
         </div>
 
@@ -41,4 +55,4 @@ class App extends Component {
   }
 }
 
-export default (App);
+export default App;
