@@ -21,12 +21,13 @@ class TodoInput extends Component {
                                 onChange={handleChange}
                             />
                         </div>
-                        <button 
-                            type="submit" 
+                        <button
+                            type="submit"
+                            disabled={!item}
                             className={
-                                editItem ? "btn btn-block btn-success mt-3" : "btn btn-block btn-primary mt-3"
+                                editItem ? "btn btn-block btn-success mt-3 " : "btn btn-block btn-primary mt-3"
                             }>
-                                {editItem ? 'edit item' : 'add item'}
+                            {editItem ? 'edit item' : 'add item'}
                         </button>
 
                     </form>
