@@ -4,12 +4,14 @@
   "homepage": "https://amoljore7.github.io/27-ReactJS-Multiple-Applications/",
   "private": true,
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
-    "redux-saga": "^0.16.0"
+    "redux-saga": "^0.16.0",
+    "uuid": "^7.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
