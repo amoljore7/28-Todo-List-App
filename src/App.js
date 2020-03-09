@@ -11,7 +11,9 @@ class App extends Component {
     console.log(">>>Inside of Component Did Mount>>");
 
   }
-
+  componentWillMount(){
+    console.log(">>>>will mount")
+  }
   componentWillUnmount() {
     console.log(">>>inside of component Will Mount>>>");
   }
